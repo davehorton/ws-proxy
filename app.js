@@ -53,4 +53,19 @@ subscriber
 register.start() ;
 subscriber.start() ;
 notifier.start() ;
-callProcessor.start( registrar ) ;
+callProcessor.start() ;
+
+callProcessor.on('connected-call', function( dlgWebRtc, dlgSbc) {
+  dlgWebRtc.once('refer', handleRefer.bind( dlgWebRtc, dlgSbc ) ) ;
+  dlgSbc.once('refer', handleRefer.bind( dlgSbc, dlgWebRtc ) ) ;
+}) ;
+
+function handleRefer( dlgOther, req, res ) {
+  res.send(202) ;
+  dlgOther.request({
+    method: 'REFER',
+    headers: {
+      'Refer-To': req.get('Refer-To')
+    }
+  });
+}

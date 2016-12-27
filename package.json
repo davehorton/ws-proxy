@@ -19,7 +19,7 @@
   "dependencies": {
     "async": "^2.1.4",
     "drachtio": "^1.0.5",
-    "drachtio-fsmrf": "^0.99.29",
+    "drachtio-fsmrf": "^0.99.31",
     "drachtio-mw-registration-parser": "0.0.2",
     "drachtio-srf": "^1.0.12",
     "lodash": "^4.17.2"
