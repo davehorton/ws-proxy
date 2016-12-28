@@ -21,7 +21,7 @@
     "drachtio": "^1.0.5",
     "drachtio-fsmrf": "^0.99.31",
     "drachtio-mw-registration-parser": "0.0.2",
-    "drachtio-srf": "^1.0.12",
+    "drachtio-srf": "^1.0.14",
     "lodash": "^4.17.2"
   }
 }
