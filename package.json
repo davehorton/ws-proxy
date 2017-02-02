@@ -21,7 +21,7 @@
     "drachtio": "^1.0.8",
     "drachtio-fsmrf": "^0.100.3",
     "drachtio-mw-registration-parser": "0.0.2",
-    "drachtio-srf": "^2.0.4",
+    "drachtio-srf": "^2.0.5",
     "iptables": "0.0.4",
     "lodash": "^4.17.2",
     "redis": "^2.6.3"

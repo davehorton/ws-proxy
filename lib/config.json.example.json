@@ -1,0 +1,14 @@
+{
+  "drachtio": {
+    "host": "x.x.x.x",
+    "port": 8022,
+    "secret": "your-secret"
+  }, 
+  "mediaServer": [
+    {
+      "address": "x.x.x.x",
+      "port": 8021,
+      "secret": "ClueCon"
+    }
+  ]
+}

@@ -9,32 +9,15 @@ app.transports = [] ;
 
 exports = module.exports = app ;
 
-
-srf
-.connect(config.drachtio) 
-.on('connect', function(err, hostport) {
-  console.log('connected to drachtio listening for SIP on %s', hostport) ;
-  hostport.split(',').forEach( function(t) {
-    var arr = /^(.*)\/(.*)$/.exec( t ) ;
-    app.transports.push({
-      protocol: arr[1],
-      address: arr[2]
-    }) ;
-  }) ;
-})
-.on('error', function(err){
-  console.error('Error connecting to drachtio server: ', err.message ) ;
-})
-.on('reconnecting', function(opts) {
-  console.error('attempting to reconect: ', opts) ;
-}) ;
-
+srf.connect(config.drachtio) 
+.on('connect', function(err, hostport) { console.log('connected to drachtio listening for SIP on %s', hostport) ; })
+.on('error', function(err){ console.error('Error connecting to drachtio server: ', err.message ) ; })
+.on('reconnecting', function(opts) { console.error('attempting to reconect: ', opts) ; }) ;
 
 var Register = require('./lib/register') ;
 var Registrar = require('./lib/registrar') ;
 var CallProcessor = require('./lib/call-processor') ;
 var Subscriber = require('./lib/subscriber') ;
-
 
 var registrar = new Registrar() ;
 var register = new Register(srf, registrar) ;
